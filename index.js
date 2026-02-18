@@ -1,18 +1,7 @@
-const express = require("express");
-const app = express();
+const { app } = require("./app");
 
-function add(a, b) {
-  return a + b;
-}
+const PORT = 3000;
 
-app.get("/", (req, res) => {
-  res.send("CI IS WORKING");
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
-
-if (require.main === module) {
-  app.listen(3000, () => {
-    console.log("Server running on port 3000");
-  });
-}
-
-module.exports = add;
