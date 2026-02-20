@@ -48,7 +48,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/node-app:latest
-            docker stop node-app || true
-            docker rm node-app || true
-            docker run -d -p 4000:3000 --name node-app ${{ secrets.DOCKER_USERNAME }}/node-app:latest
+           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/node-app:latest
+           sudo docker stop node-app || true
+           sudo docker rm node-app || true
+           sudo docker run -d -p 4000:3000 --name node-app ${{ secrets.DOCKER_USERNAME }}/node-app:latest
